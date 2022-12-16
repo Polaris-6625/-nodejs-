@@ -1,0 +1,76 @@
+body {
+    background-image: linear-gradient(90deg,antiquewhite,aquamarine);
+    display: flex;
+}
+h1 {
+    color: coral;
+    position: absolute;
+}
+.title {
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    margin-left: 360px;
+    margin-top: 120px;
+    border-color: blue;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: brown;
+    background-color:darkcyan;
+    color: cornsilk;
+    font-size: 20px;
+}
+.Num {
+    background-color: burlywood;
+    position: absolute;
+    margin-left: 630px;
+    margin-top: 120px;
+    padding: 10px 10px 10px 10px;
+    border-color: blue;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    font-size: 20px;
+    color: cornsilk;
+}
+.Num::placeholder{
+    margin-left: 15px;
+    color: crimson;
+}
+.title::placeholder{
+    color:cyan;
+}
+#content {
+    margin-top: 185px;
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color:rgb(215, 127, 64);
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 630px;
+    color:white;
+    font-size: 18px;
+}
+.btn {
+    position: absolute;
+    margin-left: 960px;
+    margin-top: 110px;
+    padding-bottom: 23px;
+    padding-right: 14px;
+    border-radius: 5px;
+    border-width: 6px;
+    border-bottom: 6px;
+    border-color: chartreuse;
+    background-color: brown;
+    color: aliceblue;
+    font-size: 22px;
+}
+.btn:hover {
+    font-size: 22px;
+    background-color:coral;
+    border-color: bisque;
+    transition: all 1s;
+    color:darkorchid;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>狗屁不通文章生成器</title>
+        <!-- <link  rel="stylesheet" type="text/css" href="show.css"> -->
+        <style>
+            body {
+                background-image: linear-gradient(90deg,antiquewhite,aquamarine);
+                display: flex;
+            }
+            h1 {
+                color: coral;
+                position: absolute;
+            }
+            .title {
+                position: absolute;
+                padding: 10px 10px 10px 10px;
+                margin-left: 360px;
+                margin-top: 120px;
+                border-color: blue;
+                border-top: 0px;
+                border-right: 0px;
+                border-left: 0px;
+                border-color: brown;
+                background-color:darkcyan;
+                color: cornsilk;
+                font-size: 20px;
+            }
+            .Num {
+                background-color: burlywood;
+                position: absolute;
+                margin-left: 630px;
+                margin-top: 120px;
+                padding: 10px 10px 10px 10px;
+                border-color: blue;
+                border-top: 0px;
+                border-right: 0px;
+                border-left: 0px;
+                font-size: 20px;
+                color: cornsilk;
+            }
+            .Num::placeholder{
+                margin-left: 15px;
+                color: crimson;
+            }
+            .title::placeholder{
+                color:cyan;
+            }
+            #content {
+                margin-top: 185px;
+                width: 80%;
+                height: auto;
+                margin-left: 10%;
+                margin-right: 10%;
+                background-color:rgb(215, 127, 64);
+                flex-direction: column;
+                flex-grow: 1;
+                flex-basis: 630px;
+                color:white;
+                font-size: 18px;
+            }
+            .btn {
+                position: absolute;
+                margin-left: 960px;
+                margin-top: 110px;
+                padding-bottom: 23px;
+                padding-right: 14px;
+                border-radius: 5px;
+                border-width: 6px;
+                border-bottom: 6px;
+                border-color: chartreuse;
+                background-color: brown;
+                color: aliceblue;
+                font-size: 22px;
+            }
+            .btn:hover {
+                font-size: 22px;
+                background-color:coral;
+                border-color: bisque;
+                transition: all 1s;
+                color:darkorchid;
+            }
+            h2 {
+                color:brown;
+                position: absolute;
+                margin-right: 0;
+                margin-left: 1350px;
+                text-shadow: 5px 5px gray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>狗屁不通文章生成器</h1>
+        <h2>作者:刘宇洋</h2>
+        <!-- <form action="http://localhost:8345/xx/create" method="post">
+            <input id="title" class="title" name="title" type="text" placeholder="请输入文章标题" autocomplete="off">
+            <input id="Num" name="Num" class="Num" type="number" placeholder="请输入字数" autocomplete="off">
+            <input type="submit" value="生成">
+        </form> -->
+        <input id="title" class="title" name="title" type="text" placeholder="请输入文章标题" autocomplete="off">
+        <input id="Num" name="Num" class="Num" type="number" placeholder="请输入字数" autocomplete="off">
+        <button id="btn" class="btn">生成</button>
+        <div id="content">
+            
+        </div>
+    </body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('btn').addEventListener('click',()=>{
+            console.log("事件触发了");
+            let title = document.getElementById('title').value;
+            console.log(title);
+            
+            axios({
+                method:"post",
+                url : "http://localhost:8345/xx/create",
+                data:{
+                    "title":document.getElementById('title').value,
+                    "Num":document.getElementById('Num').value
+                }
+            }).then((resp)=>{
+                document.getElementById('content').innerHTML = resp.data;
+            })
+        },false);
+    </script>
+</html>
